@@ -1,0 +1,26 @@
+<form class="form-horizontal col-sm-offset-2 col-sm-8" name="formBusq" style="background: #ccc; border-radius: 20px">
+  <h3 class="text-center" style="color: #FF3604">
+    Inicie Sesion
+  </h3>
+
+  <div class="form-group" >
+    <label for="txtUsuario" class="sr-only col-sm-3 control-label">Usuario:</label>
+    <div class="col-sm-7">
+      <input ng-model="usuario.nombreUsuario" type="text" class="form-control" id="txtUsuario" placeholder="Usuario:">
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="txtPass" class="sr-only col-sm-3 control-label">Password:</label>
+    <div class="col-sm-7">
+      <input ng-model="usuario.claveUsuario" type="password" class="form-control" id="txtPass" placeholder="Password">
+    </div>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-primary btn-block col-sm-7" ng-click="iniciarSesion()" >
+      <span class="glyphicon glyphicon-log-in"></span>
+      Iniciar
+    </button>
+  </div>
+</form>

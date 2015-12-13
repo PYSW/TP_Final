@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="OSJUY" >
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Serapio Matias</title>
+    </head>
+
+    <body ng-controller="appController">
+        <div class="contenedor">
+            <header class="container">
+                <img src="img/img_header.bmp" class="img-responsive hidden-xs col-sm-2"/>
+                <span class="col-md-8"> OSJuy</span>
+            </header>
+
+            <nav class="container navbar navbar-default" >
+                <div class="">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#/">Inicio</a></li>
+                            <li><a href="#/busquedaProfesionales">Buscar Profesionales</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administracion <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#/gestionProfesionales">Gestion Profesionales</a></li>
+                                    <li><a href="#/gestionNoticias">Gestion Noticias</a></li>                       
+                                </ul>
+                            </li>
+                            <li><a href="#/login" ng-show="usuarioConectado.estaConectado == false">Iniciar Sesion</a></li>
+                            <li><a href="" ng-show="usuarioConectado.estaConectado" ng-click="cerrarSesion()">Cerrar Sesion <span class="glyphicon glyphicon-log-out"></span></a></li>
+                            <li><a href="">{{usuarioConectado.nombreUsuario}}</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <div class="container">
+
+                <div class="col-sm-9" ng-view>
+
+                </div>
+
+                <div class="aside container col-sm-3" style="height: 100%"> 
+                    <aside>
+                        <span class="col-sm-offset-4">Newslater</span>
+                        <input type="text" placeholder="Ingrese aqui su mail"><br/>
+                        <button type="button" class="btn-primary">
+                            <span class=" glyphicon glyphicon-thumbs-up"></span>
+                            <span>OK</span>
+                        </button>
+                        <h4>Enlaces Relacionados</h4>
+                        <ul class="sidebar-nav">
+                            <li>
+                                <a href="#/" title="site 1"/>
+                                site 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/" title="site 2"/>
+                                site 2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/" title="site 3"/>
+                                site 3
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <footer class="container" style="bottom:0px">
+        </footer>
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/angular/angular-route.min.js"></script>
+        <script src="js/ng-table/ng-table.min.js" type="text/javascript"></script>
+        <script src="js/angular/angular-cookies.min.js" type="text/javascript"></script>
+        <script src="js/main.js"></script>
+
+        <script src="js/angular/models/profesionalesService.js" 
+            type="text/javascript">
+        </script>
+
+        <script src="js/angular/controllers/busquedaProfesionalController.js" 
+            type="text/javascript">
+        </script>
+
+        <script src="js/angular/controllers/gestionProfesionalesController.js" 
+            type="text/javascript">
+        </script>
+
+        <script src="js/angular/models/noticiasService.js" type="text/javascript"></script>
+        <script src="js/angular/controllers/noticiasController.js" 
+            type="text/javascript">
+        </script>
+
+        <script src="js/angular/models/autService.js" type="text/javascript"></script>
+        <script src="js/angular/controllers/appController.js" 
+            type="text/javascript">
+        </script>
+        <script src="js/angular/controllers/loginController.js" 
+            type="text/javascript">
+        </script>
+
+</html>

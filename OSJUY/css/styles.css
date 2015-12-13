@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15/04/2015, 20:22:43
+    Author     : Administrador
+*/
+
+.contenedor{
+    overflow: hidden;
+}
+
+.main{
+    background: #F2EDED;
+}
+.aside{
+    background: #A9A3A3;
+    border-radius: 5px;
+    color: #FF3300;
+    padding-bottom: 32767px;
+    margin-bottom: -32767px;
+}
+.aside a{
+    color: #C92314;
+    font: bolder;
+}
+header{
+    background: linear-gradient(#FF3604,#F2EDED);
+    font: bold;
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+}
+
+.fecha{
+    background: radial-gradient(#1a8ae7,#1a41e7);
+    color: white;
+    border-radius: 10px;
+    
+}
+
+
+footer{
+    background: linear-gradient(#F2EDED,#FF3604);
+    height: 100px;
+}
+
+.tituloNoticia{
+    font-size: 20px;
+    display: block;
+}

@@ -1,0 +1,109 @@
+<!--FORMULARIO-->
+<form class="form-horizontal col-sm-offset-2 col-sm-8" name="formBusq" style="background: #ccc; border-radius: 20px">
+    <h3 class="text-center" style="color: #FF3604">
+        Busque un Profesional
+    </h3>
+    <div class="form-group" >
+        <label for="txtMatricula" class="col-sm-3 control-label">Matricula:</label>
+        <div class="col-sm-7">
+            <input ng ng-model="filtros.matricula" pattern="^(\A-Z]|[a-z]){2}\u002D\d{4}$" type="text" class="form-control" name="txtMatricula" placeholder="Matricula:">
+            <span class="text-danger" ng-show="formBusq.txtMatricula.$error.pattern">
+                <span class="glyphicon glyphicon-warning-sign"></span>
+                Matricula Invalida
+            </span>
+<!--            error: {{formBusq.txtMatricula.$error}}  valor: {{filtros.matricula}}-->
+        </div>
+    </div>
+    
+    <div class="form-group" >
+        <label for="txtApellido" class="col-sm-3 control-label">Apellido:</label>
+        <div class="col-sm-7">
+            <input ng-model="filtros.apellido" type="text" class="form-control" id="txtApellido" placeholder="Apellido:">
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <label for="txtNombre" class="col-sm-3 control-label">Nombre:</label>
+        <div class="col-sm-7">
+            <input ng-model="filtros.nombres" type="text" class="form-control" id="txtNombre" placeholder="Nombre:">
+        </div>
+    </div>
+    
+    <div class="form-group" >
+        <label for="txtEmail" class="col-sm-3 control-label">Email:</label>
+        <div class="col-sm-7">
+            <input ng-model="filtros.email" type="text" class="form-control" id="txtEmail" placeholder="e-mail">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="ambito" class="col-sm-3 control-label">Ambito:</label>
+        <div class="col-sm-7">
+            <input ng-model="filtros.ambito" value="p" type="radio" class="radio-inline" >Prov
+            <input ng-model="filtros.ambito" value="n" type="radio" class="radio-inline" >Nac
+        </div>
+    </div>
+
+    <div class="form-group" id="especialidad" >
+        <label for="especialidad" class="col-sm-3 control-label">Especialidad:</label>
+        <div class="col-sm-7">
+            <select class="form-control" ng-model="filtros.tipoProfesion" ng-change="filtros.busquedaAvanzada = true">
+                <option value="Clinico">Clinico</option>
+                <option value="Odontologo">Odontologo</option>
+                <option value="Oftalmologo">Oftalmologo</option>
+                <option value="Traumatologo">Traumatologo</option>
+                <option value="Pediatra">Pediatra</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <label for="especialidad" class="col-sm-3 control-label"></label>
+        <div class="col-sm-7">
+            <input type="checkbox" ng-model="filtros.busquedaAvanzada" >Busq Avanzada
+        </div>
+    </div>
+
+    <div class="text-center text-info" id="mensaje"></div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-success" ng-click="buscar()">
+                <span class="glyphicon glyphicon-search"></span>
+                Buscar
+            </button>
+            <button type="button" class="btn btn-primary" aria-hidden ng-click="limpiarForm()" >
+                <span class="glyphicon glyphicon-erase"></span>
+                Limpiar
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<!--TABLA-->
+<h3 class="text-center" style="color: #FF3604">
+    Profesionales Encontrados
+</h3>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover" style="background: white" ng-table="tableParams">
+        <tr class="active">
+            <th>Matricula</th>
+            <th>apellido</th>
+            <th>nombres</th>
+            <th>Email</th>
+            <th>Especialidad</th>
+            <th>Ambito</th>
+            <th>Estado</th>
+        </tr>
+        <tr ng-repeat="p in $data">
+            <td>{{p.matricula | uppercase}}</td>
+            <td>{{p.apellido}}</td>
+            <td>{{p.nombres}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.tipoProfesion}}</td>
+            <td>{{p.ambito}}</td>
+            <td><input type="checkbox" ng-model="p.estado" 
+                   ng-true-value="'1'" ng-false-value="'0'" disabled></td>
+        </tr>
+    </table>

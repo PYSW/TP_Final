@@ -1,0 +1,94 @@
+{
+    "profesionales":[
+    {
+       "matricula": "AA-0000",
+       "apellido": "Vargas",
+       "nombres": "Juan",
+       "email": "Juanv@hotmail.com",
+       "fechaMatriculacion": "01-02-2015",
+       "especialidad": "Clinico",
+       "ambito": "p",
+       "estado": "true"
+   },
+   {
+       "matricula": "MD-8765",
+       "apellido": "Sanabria",
+       "nombres": "Leandro Ismael",
+       "email": "leandors@hotmail.com",
+       "fechaMatriculacion": "16-11-1999",
+       "especialidad": "Clinico",
+       "ambito": "p",
+       "estado": "true"
+   },
+   {
+       "matricula": "GD-5486",
+       "apellido": "Rojas",
+       "nombres": "Candelaria Maria",
+       "email": "cmr@hotmail.com",
+       "fechaMatriculacion": "24-12-1999",
+       "especialidad": "Pediatra",
+       "ambito": "n",
+       "estado": "true"
+   },
+   {
+       "matricula": "GD-6248",
+       "apellido": "Calvo",
+       "nombres": "Marta Susana",
+       "email": "cal@hotmail.com",
+       "fechaMatriculacion": "15-06-1999",
+       "especialidad": "Pediatra",
+       "ambito": "n",
+       "estado": "false"
+   },
+   {
+       "matricula": "GD-5548",
+       "apellido": "Rinaudo",
+       "nombres": "Alejandra Mónica",
+       "email": "rinal@hotmail.com",
+       "fechaMatriculacion": "16-12-1999",
+       "especialidad": "Otro",
+       "ambito": "n",
+       "estado": "true"
+   },
+   {
+       "matricula": "GD-5896",
+       "apellido": "Villar",
+       "nombres": " Miguel",
+       "email": "migue@hotmail.com",
+       "fechaMatriculacion": "21-07-1999",
+       "especialidad": "Traumatologo",
+       "ambito": "n",
+       "estado": "true"
+   },
+   {
+       "matricula": "TT-5896",
+       "apellido": "Rojas",
+       "nombres": " Mateo",
+       "email": "mue@hotmail.com",
+       "fechaMatriculacion": "18-04-1973",
+       "especialidad": "Oftalmologo",
+       "ambito": "p",
+       "estado": "false"
+   },
+   {
+       "matricula": "RG-5467",
+       "apellido": "Lopez",
+       "nombres": " Jimena",
+       "email": "jim@hotmail.com",
+       "fechaMatriculacion": "05-05-1988",
+       "especialidad": "Otro",
+       "ambito": "p",
+       "estado": "true"
+   },
+   {
+       "matricula": "BH-3333",
+       "apellido": "Vera",
+       "nombres": "Pedro",
+       "email": "pepe@hotmail.com",
+       "fechaMatriculacion": "15-11-2000",
+       "especialidad": "Odontologo",
+       "ambito": "n",
+       "estado": "true"
+   }
+]
+}

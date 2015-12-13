@@ -1,0 +1,95 @@
+<!--FORMULARIO-->
+<form class="form-horizontal col-sm-offset-2 col-sm-8" name="formCRUD" style="background: #ccc; border-radius: 20px">
+    <h3 class="text-center" style="color: #FF3604">
+        Datos del Profesionales
+    </h3>
+
+    <div class="form-group" >
+        <label for="txtFecha" class="col-sm-3 control-label">Fecha:</label>
+        <div class="col-sm-7">
+            <input ng-model="noticia.fechaPublicacion" pattern="^([1-9]|0[1-9]|[12][0-9]|3[01])[/]([1-9]|0[1-9]|1[012])[/](19|20)\d\d$" type="txt" class="form-control" name="txtFecha" placeholder="dd/MM/yyyy" required>
+            <span class="text-danger" ng-show="formCRUD.txtFecha.$error.required">
+                <span class="glyphicon glyphicon-warning-sign"></span>
+                requerido
+            </span>
+            <span class="text-danger" ng-show="formCRUD.txtFecha.$error.pattern">
+                <span class="glyphicon glyphicon-warning-sign"></span>
+                invalido
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <label for="txtTitulo" class="col-sm-3 control-label">Titulo:</label>
+        <div class="col-sm-7">
+            <input ng ng-model="noticia.encabezado"
+                   type="text" name="txtTitulo" class="form-control" placeholder="Noticia:" required>
+            <span class="text-danger" ng-show="formCRUD.txtTitulo.$error.required">
+                <span class="glyphicon glyphicon-warning-sign"></span>
+                requerido
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <label for="txtContenido" class="col-sm-3 control-label">contenido:</label>
+        <div class="col-sm-7">
+            <textarea rows="4" cols="50" ng ng-model="noticia.contenido"
+                   type="text" name="txtContenido" class="form-control" placeholder="Noticia:" required></textarea>
+            <span class="text-danger" ng-show="formCRUD.txtContenido.$error.required">
+                <span class="glyphicon glyphicon-warning-sign"></span>
+                requerido
+            </span>
+        </div>
+    </div>
+
+    <div class="text-center text-info" id="mensaje"></div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-success" ng-click="addNoticia()"
+                    ng-disabled="formCRUD.$invalid"
+                    ng-show="!isModificacion">
+                <span class=" glyphicon glyphicon-floppy-save"></span>
+                Agregar 
+            </button>
+            <button type="button" class="btn btn-primary" ng-click="updateNoticia()"
+                    ng-disabled="formCRUD.$invalid"
+                    ng-show="isModificacion">
+                <span class="glyphicon glyphicon-pencil"></span>
+                Modificar
+            </button>
+            <button type="button" class="btn btn-danger" ng-click="limpiarForm()">
+                <span class="glyphicon glyphicon-remove"></span>
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<!--TABLA-->
+<h3 class=" text-center col-sm-12" style="color: #FF3604">
+    Tabla Noticias
+</h3>
+<div class="table-responsive col-sm-12">
+    <table class="table table-bordered table-hover" style="background: white" ng-table="tableParams">
+        <tr class="active">
+            <th>id Noticia</th>
+            <th>Fecha</th>
+            <th>Titulo</th>
+            <th>Contenido</th>
+            <th>Acciones</th>
+            
+        </tr>
+        <tr ng-repeat="noticia in $data">
+            <td>{{noticia.idnoticia}}</td>
+            <td>{{noticia.fechaPublicacion}}</td>
+            <td>{{noticia.encabezado}}</td>
+            <td>{{noticia.contenido}}</td>
+            <td nowrap>
+                <button type="button" class="btn btn-info glyphicon glyphicon-pencil" ng-click="seleccionarNoticia(noticia)" title="Editar"></button>
+                <button type="button" class="btn btn-danger glyphicon glyphicon-trash" ng-click="deleteNoticia(noticia)" title="Eliminar"></button>
+            </td>
+            
+        </tr>
+    </table>
